@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Blog Faizal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-r from-blue-400 to-blue-600 text-white min-h-screen flex flex-col">
+    <!-- Navbar (responsive) -->
+    <nav class="bg-transparent">
+        <div class="container mx-auto flex items-center justify-between py-4 px-6">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-md bg-white bg-opacity-20 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                </div>
+                <span class="font-bold text-2xl tracking-wide">Blog Faizal</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="hover:underline font-semibold transition">Home</a>
+                <a href="blog.html" class="hover:underline font-semibold transition">Blog</a>
+                <a href="about.html" class="hover:underline font-semibold transition">About</a>
+            </div>
+
+            <button id="nav-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white bg-opacity-10 backdrop-blur-sm">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-3">
+                <a href="index.html" class="font-semibold">Home</a>
+                <a href="blog.html" class="font-semibold">Blog</a>
+                <a href="about.html" class="font-semibold">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 py-16 px-6">
+        <div class="md:w-1/2">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight drop-shadow-lg">
+                Selamat Datang di <span class="text-blue-200">Blog Faizal</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-6 text-blue-100 max-w-xl">
+                Tempat berbagi materi kuliah, pengalaman belajar, dan inspirasi seputar pendidikan & teknologi. Artikel ringkas, praktis, dan mudah dipraktikkan.
+            </p>
+            <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
+                <a href="blog.html" class="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-lg shadow hover:bg-blue-50 transition text-center">Baca Blog</a>
+                <a href="about.html" class="inline-block bg-transparent border-2 border-white border-opacity-30 text-white font-bold px-6 py-3 rounded-lg hover:bg-white hover:text-blue-700 transition text-center">Tentang Saya</a>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 flex justify-center">
+            <div class="bg-white bg-opacity-10 rounded-2xl p-4 shadow-xl transform hover:scale-105 transition">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=500&q=80" alt="Belajar" class="rounded-xl w-80 h-80 object-cover border-4 border-blue-300">
+            </div>
+        </div>
+    </header>
+
+    <!-- Highlights -->
+    <section class="container mx-auto px-6 pb-10">
+        <h2 class="text-2xl font-bold text-center mb-8 text-white">Apa yang Bisa Kamu Temukan?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-6 text-blue-700 flex flex-col items-center">
+                <svg class="w-12 h-12 mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z"/></svg>
+                <h3 class="font-bold text-lg mb-2">Materi Kuliah</h3>
+                <p class="text-center">Rangkuman dan penjelasan singkat yang mudah dipahami.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-blue-700 flex flex-col items-center">
+                <svg class="w-12 h-12 mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                <h3 class="font-bold text-lg mb-2">Tips Belajar</h3>
+                <p class="text-center">Teknik sederhana yang bisa langsung dicoba.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-blue-700 flex flex-col items-center">
+                <svg class="w-12 h-12 mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2h5"/></svg>
+                <h3 class="font-bold text-lg mb-2">Pengalaman Kampus</h3>
+                <p class="text-center">Cerita dan pelajaran dari kehidupan perkuliahan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest articles preview -->
+    <section class="container mx-auto px-6 pb-16">
+        <div class="bg-white bg-opacity-10 rounded-xl p-6">
+            <h3 class="text-2xl font-bold mb-4">Artikel Terbaru</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="bg-white rounded-lg p-4 text-blue-700 shadow-sm">
+                    <h4 class="font-semibold">Pengantar Komputer Masyarakat</h4>
+                    <p class="text-sm text-gray-600 mb-2">Minggu 1, 26 Agustus 2025</p>
+                    <p class="mb-3 text-sm">Ringkasan pengalaman pertama di kelas Komputer Masyarakat.</p>
+                    <a href="artikel-minggu-1.html" class="text-blue-500 font-semibold hover:underline">Baca Selengkapnya →</a>
+                </article>
+                <article class="bg-white rounded-lg p-4 text-blue-700 shadow-sm">
+                    <h4 class="font-semibold">Lebih Banyak Artikel Segera</h4>
+                    <p class="text-sm text-gray-600 mb-2">Update berkala</p>
+                    <p class="mb-3 text-sm">Saya akan menambahkan artikel baru secara rutin. Kunjungi halaman blog untuk daftar lengkap.</p>
+                    <a href="blog.html" class="text-blue-500 font-semibold hover:underline">Lihat Semua Artikel →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-blue-500 p-6">
+        <div class="container mx-auto text-center text-white">
+            <p class="font-medium mb-2">&copy; 2025 Blog Faizal. All rights reserved.</p>
+            <p class="text-sm text-blue-100">Dibuat dengan ❤️ — Fokus pada konten edukatif dan pengalaman belajar.</p>
+        </div>
+    </footer>
+
+    <!-- Simple script for mobile menu -->
+    <script>
+        const btn = document.getElementById('nav-toggle');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Blog Faizal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-blue-400 to-blue-600 text-white min-h-screen flex flex-col">
+    <!-- Navbar (responsive, konsisten dengan index) -->
+    <nav class="bg-transparent">
+        <div class="container mx-auto flex items-center justify-between py-4 px-6">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-md bg-white bg-opacity-20 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                </div>
+                <span class="font-bold text-2xl tracking-wide">Blog Faizal</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="hover:underline font-semibold transition">Home</a>
+                <a href="blog.html" class="hover:underline font-semibold transition">Blog</a>
+                <a href="about.html" class="hover:underline font-semibold transition">About</a>
+            </div>
+
+            <button id="nav-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-white bg-opacity-10 backdrop-blur-sm">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-3">
+                <a href="index.html" class="font-semibold">Home</a>
+                <a href="blog.html" class="font-semibold">Blog</a>
+                <a href="about.html" class="font-semibold">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Header -->
+    <header class="container mx-auto px-6 py-12">
+        <div class="bg-white bg-opacity-10 rounded-xl p-6 md:flex md:items-center md:justify-between">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-extrabold">Artikel & Wawasan</h1>
+                <p class="text-blue-100 mt-2 max-w-2xl">Kumpulan tulisan singkat tentang materi kuliah, tips belajar, dan refleksi pengalaman kampus — ditulis dengan bahasa ringkas dan praktis.</p>
+            </div>
+            <div class="mt-4 md:mt-0 md:w-1/3">
+                <label for="search" class="sr-only">Cari artikel</label>
+                <div class="relative">
+                    <input id="search" type="text" placeholder="Cari artikel..." class="w-full rounded-lg bg-white bg-opacity-90 text-blue-700 placeholder-blue-500 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300" />
+                    <button id="search-btn" class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600 transition">Cari</button>
+                </div>
+                <!-- simple live result count -->
+                <p id="search-count" class="mt-2 text-sm text-blue-100 hidden" aria-live="polite"></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Artikel grid -->
+    <main class="container mx-auto px-6 pb-12 flex-grow">
+        <div id="articles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- note: data-title & data-body digunakan untuk pencarian client-side -->
+            <article class="article-card bg-white rounded-xl shadow-lg p-6 text-blue-700 flex flex-col" data-title="Pengantar Komputer Masyarakat" data-body="Refleksi awal tentang bagaimana teknologi dan masyarakat saling mempengaruhi, serta beberapa poin penting dari pertemuan pertama.">
+                <h2 class="font-bold text-xl mb-2">Pengantar Komputer Masyarakat</h2>
+                <p class="text-sm text-gray-600 mb-4">26 Agustus 2025 — Pengalaman Pertama di Kelas Komputer Masyarakat</p>
+                <p class="mb-4 text-sm text-gray-700">Refleksi awal tentang bagaimana teknologi dan masyarakat saling mempengaruhi, serta beberapa poin penting dari pertemuan pertama.</p>
+                <div class="mt-auto">
+                    <a href="artikel-minggu-1.html" class="inline-block text-white bg-blue-500 px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition">Baca Selengkapnya →</a>
+                </div>
+            </article>
+
+            <!-- contoh artikel tambahan yang bisa dicari 
+            <article class="article-card bg-white rounded-xl shadow-lg p-6 text-blue-700 flex flex-col" data-title="Mengenal HTML & CSS Dasar" data-body="Panduan pemula membuat struktur web dan styling dasar dengan contoh.">
+                <h2 class="font-bold text-xl mb-2">Mengenal HTML &amp; CSS Dasar</h2>
+                <p class="text-sm text-gray-600 mb-4">10 Mei 2025 — Panduan pemula</p>
+                <p class="mb-4 text-sm text-gray-700">Ringkasan praktis untuk memulai pembuatan halaman web dengan HTML dan styling sederhana menggunakan CSS.</p>
+                <div class="mt-auto">
+                    <a href="artikel-html-css.html" class="inline-block text-white bg-blue-500 px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition">Baca Selengkapnya →</a>
+                </div>
+            </article>
+
+            <article class="article-card bg-white rounded-xl shadow-lg p-6 text-blue-700 flex flex-col" data-title="Pengalaman Kuliah di Teknik Informatika" data-body="Cerita seru dan tantangan selama menjalani kuliah di jurusan Teknik Informatika.">
+                <h2 class="font-bold text-xl mb-2">Pengalaman Kuliah di Teknik Informatika</h2>
+                <p class="text-sm text-gray-600 mb-4">2 Mei 2025 — Cerita & tips</p>
+                <p class="mb-4 text-sm text-gray-700">Berbagi pengalaman, tantangan, dan saran untuk mahasiswa jurusan Teknik Informatika.</p>
+                <div class="mt-auto">
+                    <a href="artikel-pengalaman-kuliah.html" class="inline-block text-white bg-blue-500 px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition">Baca Selengkapnya →</a>
+                </div>
+            </article> -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-500 p-6">
+        <div class="container mx-auto text-center text-white">
+            <p class="font-medium mb-2">&copy; 2025 Blog Faizal. All rights reserved.</p>
+            <p class="text-sm text-blue-100">Fokus pada konten edukatif, ringkas, dan mudah dipahami.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('nav-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        }
+
+        // Simple client-side search (filter article cards)
+        (function () {
+            const input = document.getElementById('search');
+            const searchBtn = document.getElementById('search-btn');
+            const articles = Array.from(document.querySelectorAll('.article-card'));
+            const resultCount = document.getElementById('search-count');
+
+            function normalize(str) {
+                return (str || '').toLowerCase();
+            }
+
+            function performSearch(query) {
+                const q = normalize(query).trim();
+                let visible = 0;
+                articles.forEach(a => {
+                    const title = normalize(a.dataset.title);
+                    const body = normalize(a.dataset.body);
+                    if (!q || title.includes(q) || body.includes(q)) {
+                        a.classList.remove('hidden');
+                        visible++;
+                    } else {
+                        a.classList.add('hidden');
+                    }
+                });
+                // update count
+                if (q) {
+                    resultCount.textContent = visible + (visible === 1 ? ' hasil ditemukan' : ' hasil ditemukan');
+                    resultCount.classList.remove('hidden');
+                } else {
+                    resultCount.classList.add('hidden');
+                }
+            }
+
+            // realtime search as user types (debounced)
+            let timer = null;
+            input.addEventListener('input', (e) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => performSearch(e.target.value), 150);
+            });
+
+            // search button click
+            searchBtn.addEventListener('click', () => performSearch(input.value));
+
+            // Enter key triggers search
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    performSearch(input.value);
+                }
+            });
+
+            // on load: show all
+            performSearch('');
+        })();
+    </script>
+</body>
+</html>

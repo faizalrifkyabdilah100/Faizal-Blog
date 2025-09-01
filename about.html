@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Saya - Blog Faizal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-blue-400 to-blue-600 text-white min-h-screen flex flex-col">
+    <!-- Navbar (konsisten) -->
+    <nav class="bg-transparent">
+        <div class="container mx-auto flex items-center justify-between py-4 px-6">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-md bg-white bg-opacity-20 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                </div>
+                <span class="font-bold text-2xl tracking-wide">Blog Faizal</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="hover:underline font-semibold transition">Home</a>
+                <a href="blog.html" class="hover:underline font-semibold transition">Blog</a>
+                <a href="about.html" class="hover:underline font-semibold transition">About</a>
+            </div>
+
+            <button id="nav-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-white bg-opacity-10 backdrop-blur-sm">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-3">
+                <a href="index.html" class="font-semibold">Home</a>
+                <a href="blog.html" class="font-semibold">Blog</a>
+                <a href="about.html" class="font-semibold">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About content -->
+    <main class="container mx-auto px-6 py-12 flex-grow">
+        <div class="bg-white rounded-xl shadow-lg p-8 text-blue-700 max-w-3xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center mb-6">
+                <img src="gambar/hahahihi.jpg" alt="Profil Faizal" class="w-36 h-36 rounded-full border-4 border-blue-300 shadow-lg mb-4 md:mb-0 md:mr-8 object-cover">
+                <div>
+                    <h1 class="text-3xl font-bold mb-1 text-blue-800">Faizal Rifky Abdilah</h1>
+                    <p class="text-sm text-gray-600">Mahasiswa Teknik Informatika • Penulis konten edukatif & praktis</p>
+                </div>
+            </div>
+
+            <section class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Profil Singkat</h2>
+                <p class="text-sm text-gray-700">Saya adalah mahasiswa Teknik Informatika yang memiliki minat kuat dalam pengembangan web dan pendidikan digital. Melalui blog ini saya membagikan ringkasan materi kuliah, tips belajar yang dapat diterapkan, serta refleksi pengalaman akademik untuk membantu rekan mahasiswa dan pembelajar mandiri.</p>
+            </section>
+
+            <section class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Minat & Keahlian</h2>
+                <ul class="list-disc list-inside ml-4 text-sm text-gray-700">
+                    <li>Pengembangan Web (HTML, CSS dasar)</li>
+                    <li>UX & Desain antarmuka sederhana</li>
+                    <li>Pendidikan & metode pembelajaran efektif</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-semibold mb-2">Pendidikan</h2>
+                <p class="text-sm text-gray-700">Saat ini menempuh pendidikan di Universitas Negeri Semarang, jurusan Teknik Informatika. Aktif mengembangkan keterampilan praktis melalui proyek kecil dan kolaborasi dengan teman sejawat.</p>
+            </section>
+
+            <div class="mt-6 flex space-x-3">
+                <a href="mailto:faizal@example.com" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition text-sm">Hubungi Saya</a>
+                <a href="blog.html" class="inline-block bg-transparent border border-blue-300 text-blue-800 px-4 py-2 rounded-lg text-sm hover:bg-blue-50 transition">Lihat Artikel</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-500 p-6">
+        <div class="container mx-auto text-center text-white">
+            <p class="font-medium mb-2">&copy; 2025 Faizal Rifky Abdilah. All rights reserved.</p>
+            <p class="text-sm text-blue-100">Konten dibuat untuk tujuan pembelajaran dan berbagi pengalaman.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('nav-toggle');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        }
+    </script>
+</body>
+</html>
